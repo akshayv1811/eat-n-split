@@ -33,6 +33,14 @@ body {
   align-items: start;
 }
 
+/* Media query for tablets and smaller screens */
+@media (max-width: 768px) {
+  .app {
+    grid-template-columns: 1fr; /* Stack items vertically */
+    row-gap: 2rem;
+  }
+}
+
 .button {
   background-color: var(--color-medium);
   color: #343a40;
@@ -62,7 +70,6 @@ body {
   grid-template-columns: 4.8rem 1fr auto;
   align-items: center;
   column-gap: 1.6rem;
-
   padding: 1.2rem;
   border-radius: 7px;
   transition: 0.5s;
@@ -112,7 +119,6 @@ form {
   display: grid;
   align-items: center;
   gap: 1.2rem;
-
   background-color: var(--color-lightest);
   border-radius: 7px;
 }
@@ -122,9 +128,22 @@ form {
   margin-bottom: 1.6rem;
   padding: 1.2rem;
 }
+
 .form-split-bill {
   grid-template-columns: 1fr 12rem;
   padding: 3.2rem 4rem;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .form-add-friend, .form-split-bill {
+    grid-template-columns: 1fr; /* Stack form items */
+    padding: 1.2rem; /* Reduce padding for smaller screens */
+  }
+
+  form .button {
+    grid-column: 1; /* Adjust button to be on its own line */
+  }
 }
 
 label {
